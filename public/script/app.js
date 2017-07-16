@@ -15,7 +15,7 @@ myApp.config(function($routeProvider){
       })
 
       .when('/buyProduct:id', {
-        templateUrl: 'pages/buyProduct.html',
-        controller: 'buyProductController'
+        templateUrl: 'pages/product.html',
+        controller: 'productController'
       })
 });

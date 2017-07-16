@@ -1,40 +1,19 @@
 <div class="container">
   <div class="row sm-top-bottom-margin">
 
-      <aside class="col-md-3">
-          <div class="row form-group narrow-search-box">
-            <p class="text-center"><em>Narrow your search</em></p>
-              <div class="dropdown col-xs-6">
-                  <button class="btn btn-default dropdown-toggle sm-bottom-margin" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Sort by Partner
-                      <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-
-                      <li ng-repeat="partner in cData.partners"><a ng-click="setPartnerProducts(partner)">{{partner.name}}</a></li>
-                  </ul>
-              </div>
-
-              <div class="col-xs-6">
-                <button class="btn btn-primary sm-bottom-margin" ng-click="showAll()">Show All</button>
-              </div>
-
-              <div>
-                  <input type="text" class="form-control" ng-model="cData.searchInput" placeholder="Filter products"/>
-              </div>
-          </div>
+      <section class="col-md-10 col-md-offset-1">
+          <h1 class="top-margin text-center">Products</h1>
 
           <div class="row">
               <ul class="list-unstyled left-sm-margin">
-                  <li ng-repeat="product in cData.products | filter:cData.searchInput | filter:filterByPartner"><a ng-click="displayProductDetails(product)" class="product-button large-click"> {{product.name}}</a></li>
+                  <li ng-repeat="product in cData.products"><a ng-click="displayProductDetails(product)" class="product-button large-click"> {{product.title}}</a></li>
               </ul>
           </div>
-          <!--searchInput searches through all products object & not for product.id or product.description -->
 
-      </aside>
+      </section>
 
      <section class="col-md-7 col-md-offset-1">
          <h1 class="top-margin text-center">Product Detail</h1>
-         <h4 ng-if="loadingProductsMessage" class="text-center">Loading Products</h4>
          <div class="row sm-top-bottom-margin" ng-if="cData.selectedProduct">
              <div class="col-md-4 col-md-offset-1 img-padding">
                  <img ng-src="{{cData.selectedProduct.imgPath}}" class="img-responsive smaller-img" alt="{{cData.selectedProduct.description}}"/>
@@ -46,42 +25,10 @@
                  <p ng-if="requiredProduct" ng-click="showRequired(cData.selectedProduct)">This product requires: <a class="product-button large-click">{{requiredProduct}}</a></p>
                  <div>
                    <a class="col-md-4 btn btn-warning" ng-click="displayProductDetails('')">Cancel</a>
-                   <a class="col-md-5 col-md-offset-1 btn btn-success" ng-click="buyProduct(cData.selectedProduct)">Buy Product</a>
+                   <a class="col-md-5 col-md-offset-1 btn btn-success" ng-click="showProduct(cData.selectedProduct)">Buy Product</a>
                  </div>
              </div>
          </div>
      </section>
   </div>
 </div>
-
-<section class="wingman">
-   <div class="container">
-       <div class="row">
-           <div class="col-xs-12 col-sm-6">
-               <img src="img/pax8-cloud-wingman-hero.png" alt="Pax8 Cloud Wingman" class="img-responsive wingman-image">
-           </div>
-           <div class="col-xs-12 col-sm-6">
-             <h3 class="text-center">We're not just another distributor.</h3>
-             <h2 class="text-center big-letters">We are your Wingman.</h2>
-           </div>
-       </div>
-   </div>
-</section>
-
-<section class="container">
-   <div class="row">
-
-       <div class="col-xs-12">
-           <h3 class="text-center" ng-if="cData.companies.length>0">Partner Companies</h3>
-           <div class="row" ng-class="{'top-bottom-padding' : cData.companies.length>0}">
-               <div class="col-md-1"></div>
-               <div class="col-md-3" ng-repeat="company in cData.companies">
-                   <h4 class="text-center"><strong>{{ company.name }}</strong></h4>
-                   <br>
-                   <p class="text-center">{{ company.address }}</p>
-               </div>
-           </div>
-       </div>
-
-   </div>
-</section>
