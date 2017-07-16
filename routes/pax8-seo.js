@@ -8,7 +8,7 @@ const knex = require('../knex')
 
 //get all
 router.get('/', (req, res, next) =>{
-  knex('pax8-seo')
+  knex('pax8seo')
      .select('id', 'title', 'description', 'price', 'item_image')
      .then((results)=>{
        res.send(results);
@@ -20,7 +20,7 @@ router.get('/', (req, res, next) =>{
 
 //get by id
 router.get('/:id', (req, res, next) =>{
-  knex('pax8-seo')
+  knex('pax8seo')
      .select('id', 'title', 'description', 'price', 'item_image')
      .where('id', req.params.id)
      .then((results)=>{
@@ -33,7 +33,7 @@ router.get('/:id', (req, res, next) =>{
 
 //post new
 router.post('/', (req, res, next) =>{
-  knex('pax8-seo')
+  knex('pax8seo')
      .insert({
        title: req.body.title,
        description: req.body.description,
@@ -50,7 +50,7 @@ router.post('/', (req, res, next) =>{
 
 //update
 router.patch('/:id', (req, res, next) =>{
-  knex('pax8-seo')
+  knex('pax8seo')
      .where('id', req.params.id)
      .update({
        title: req.body.title,
@@ -68,7 +68,7 @@ router.patch('/:id', (req, res, next) =>{
 
 //delete
 router.delete('/:id', (req, res, next) =>{
-  knex('pax8-seo')
+  knex('pax8seo')
      .where('id', req.params.id)
      .returning(['id', 'title', 'description', 'price', 'item_image'])
      .del()

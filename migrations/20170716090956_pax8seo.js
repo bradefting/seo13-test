@@ -1,7 +1,7 @@
 "use strict";
 
 exports.up = function(knex, Promise) {
-  return knex.schema.createTable('pax8-seo', function(table){
+  return knex.schema.createTable('pax8seo', function(table){
     table.increments();
     table.string('title').notNullable();
     table.string('description').notNullable();
@@ -12,5 +12,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.droptable('pax8-seo');
+  return knex.schema.droptable('pax8seo');
 };
