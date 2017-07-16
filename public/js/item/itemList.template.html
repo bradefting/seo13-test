@@ -1,0 +1,58 @@
+<hr>
+
+<div>
+   Filter: <input type="search" placeholder="Filter items" ng-model="searchItem">
+</div>
+
+<div>
+  <h4>Sort items by:</h4>
+  <button type="button" ng-click="sortType = 'created_at'">Post Date</button>
+  <button type="button" ng-click="sortType = 'price'">Low to high price</button>
+  <button type="button" ng-click="sortType = '-price'">High to low price</button>
+</div>
+
+<hr>
+
+<br>
+
+<div>
+   <button type="submit" ng-click="$ctrl.openForm()">Create new item</button>
+</div>
+
+<form ng-if="$ctrl.newItemForm === true" ng-submit="$ctrl.createItem()" novalidate>
+
+   <div>
+       <label for="title">Title: </label>
+       <input type="text" placeholder="Title" name="title" ng-model="$ctrl.item.title" required>
+   </div>
+
+   <div>
+       <label for="price">Price: </label>
+       <input type="text" placeholder="Price" name="price" ng-model="$ctrl.item.price" required>
+   </div>
+
+   <div>
+       <label for="item_image">Item Image: </label>
+       <input type="text" placeholder="Image" name="item_image" ng-model="$ctrl.item.item_image" required>
+   </div>
+
+   <div>
+       <label for="description">Description: </label>
+       <textarea placeholder="Description" name="description" ng-model="$ctrl.item.description" required></textarea>
+   </div>
+
+   <button type="submit">Create</button>
+
+</form>
+
+<hr>
+
+<div ng-repeat="item in $ctrl.items | orderBy:sortType:sortReverse | filter:searchItem">
+   <img ng-src="{{ item.item_image }}" alt="Image of item for sale" />
+   <p>Title: {{ item.title }}</p>
+   <p>Price: ${{ item.price | number:2 }}</p>
+   <p>Description: {{ item.description }}</p>
+   <button type="submit" ui-sref="edit({id: item.id})" name="edit">edit</button>
+   <hr>
+
+</div>
