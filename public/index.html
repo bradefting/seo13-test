@@ -1,33 +1,73 @@
-<!DOCTYPE html>
-<html ng-app="app">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <base href="/">
-  <title>Pax8 SEO Test</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pax8 Code Challenge</title>
+    <link rel="icon" href="./img/favicon.ico">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/custom.css">
+
 </head>
-<body>
 
-  <!-- <app></app> -->
-  <ui-view></ui-view>
+<body ng-app="myApp">
 
-  <!--angular  -->
+    <nav class="navbar navbar-inverse navbar-fixed-top blue-hr-line">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- collapsable navbar -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
-  <script src="https://code.angularjs.org/1.3.2/angular-route.min.js"></script>
+                <a class="navbar-brand"><img src="img/logo.png" alt="Pax8 Logo" class="img-responsive brand-logo"></a>
+            </div>
 
-  <!--ui-router  -->
-  <script src="https://unpkg.com/angular-ui-router@1.0.0-beta.3/release/angular-ui-router.js"></script>
+            <div class="collapse navbar-collapse" id="navbar-collapse-main">
+                <ul class="nav navbar-nav navbar-right">
+          					<li><a href="#">Home</a></li>
+                    <li><a href="#/about">About</a></li>
+      				  </ul>
+            </div>
 
-  <!--angular scripts -->
-  <script src="/js/app/app.module.js" defer></script>
-  <script src="/js/app/app.component.js" defer></script>
-  <script src="/js/app/app.config.js" defer></script>
-  <script src="/js/item/itemList.component.js" defer></script>
-  <script src="/js/item/itemEdit.component.js" defer></script>
-  <script src="/js/services/item.service.js" defer></script>
+        </div>
+    </nav>
+
+    <main>
+
+      <!--change state  -->
+      <div ng-view></div>
+
+      <footer class="navbar navbar-inverse blue-hr-line">
+          <div class="container">
+              <p class="navbar-text">Pax8 demo created by Brad Efting</p>
+          </div>
+      </footer>
+
+    </main>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.3.2/angular-route.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap.min.js"></script>
+
+    <!--Angular Links  -->
+    <script src="script/app.js"></script>
+    <script src="script/controllers/homeController.js"></script>
+    <script src="script/controllers/aboutController.js"></script>
+    <script src="script/controllers/buyProductController.js"></script>
+    <script src="script/service/helperService.js"></script>
+    <script src="script/service/myApisService.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row sm-top-bottom-margin">
+
+    <h1 class="text-center">About Pax8</h1>
+
+    <p>Pax8 is the leading value-added cloud distributor offering top cloud products and solutions to the IT channel. Established in 2012, Pax8 was formed to remove the pain points for SMBs interested in growing their business through a recurring-revenue model.</p>
+
+    <p>The company is driving the business transition to the cloud through its profound enablement and comprehensive technology. Pax8’s cloud marketplace provides efficient and intelligent configuration of cloud products so partners can easily create and customize a bundled solution for their customers. It also gives them the capabilities to scale, while delivering true quote-to-cash support.</p>
+
+    <p>In order to fuel partner success, Pax8 offers on-demand marketing programs, sales assistance and training, provisioning automation, and subscription billing. As the experts in cloud innovation, Pax8 is well-engineered to sell, assemble, and deliver quality cloud solutions to its worldwide channel of IT service providers.</p>
+
+    <p>Pax8 is headquartered in Denver, Colorado.</p>
+
+  </div>
+</div>
+
+  <section class="wingman">
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                  <img src="img/pax8-cloud-wingman-hero.png" alt="Pax8 Cloud Wingman" class="img-responsive wingman-image">
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <h3 class="text-center">We're not just another distributor.</h3>
+                <h2 class="text-center big-letters">We are your Wingman.</h2>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="container">
+      <div class="row">
+
+          <div class="col-xs-12">
+              <h3 class="text-center" ng-if="cData.companies.length>0">Partner Companies</h3>
+              <div class="row" ng-class="{'top-bottom-padding' : cData.companies.length>0}">
+                  <div class="col-md-1"></div>
+                  <div class="col-md-3" ng-repeat="company in cData.companies">
+                      <h4 class="text-center"><strong>{{ company.name }}</strong></h4>
+                      <br>
+                      <p class="text-center">{{ company.address }}</p>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+  </section>
