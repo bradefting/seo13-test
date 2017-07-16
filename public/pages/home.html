@@ -1,34 +1,34 @@
 <div class="container">
-  <div class="row sm-top-bottom-margin">
+    <div class="row sm-top-bottom-margin">
 
-      <section class="col-md-10 col-md-offset-1">
-          <h1 class="top-margin text-center">Products</h1>
+        <h2 class="text-center">Products</h2>
 
-          <div class="row">
-              <ul class="list-unstyled left-sm-margin">
-                  <li ng-repeat="product in cData.products"><a ng-click="displayProductDetails(product)" class="product-button large-click"> {{product.title}}</a></li>
-              </ul>
-          </div>
+        <section class="row" ng-repeat="item in cData.products">
+            <div class="col-md-12">
+              <div class="well">
+                <div class="media-left">
+                  <img class="media-object" ng-src="{{ item.item_image }}" alt="Image of item">
+                </div>
+                <div class="media-body">
+                  <h4 class="media-heading">
+                    {{ item.title }}
+                  </h4>
+                  <div class="text-right">
+                    Price: <strong>${{ item.price | number:2 }}</strong>
+                  </div>
+                  <p><strong>Product Description:</strong>
+                    <br>
+                    {{ item.description }}
+                  </p>
+                  <!-- <button type="submit" class="btn btn-default" ui-sref="edit({id: item.id})" name="edit">edit</button> -->
 
-      </section>
+                  <button type="button" class="btn btn-success" name="buy" disabled>BUY IT NOW!</button>
 
-     <section class="col-md-7 col-md-offset-1">
-         <h1 class="top-margin text-center">Product Detail</h1>
-         <div class="row sm-top-bottom-margin" ng-if="cData.selectedProduct">
-             <div class="col-md-4 col-md-offset-1 img-padding">
-                 <img ng-src="{{cData.selectedProduct.imgPath}}" class="img-responsive smaller-img" alt="{{cData.selectedProduct.description}}"/>
-             </div>
-             <div class="col-md-6 col-md-offset-1">
-                 <h3>{{cData.selectedProduct.name}}</h3>
-                 <p>{{cData.selectedProduct.description}}</p>
-                 <h4>{{cData.selectedProduct.price | currency:"USD $"}}</h4>
-                 <p ng-if="requiredProduct" ng-click="showRequired(cData.selectedProduct)">This product requires: <a class="product-button large-click">{{requiredProduct}}</a></p>
-                 <div>
-                   <a class="col-md-4 btn btn-warning" ng-click="displayProductDetails('')">Cancel</a>
-                   <a class="col-md-5 col-md-offset-1 btn btn-success" ng-click="showProduct(cData.selectedProduct)">Buy Product</a>
-                 </div>
-             </div>
-         </div>
-     </section>
-  </div>
+                </div>
+              </div>
+
+            </div>
+        </section>
+
+    </div>
 </div>
