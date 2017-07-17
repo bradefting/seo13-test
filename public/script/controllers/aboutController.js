@@ -1,5 +1,5 @@
 angular.module("myApp")
-	.controller("aboutController", ['$scope', '$location', 'MyProducts', function($scope, $location, MyProducts) {
+	.controller("aboutController", ['$scope', '$location', function($scope, $location) {
 
       $scope.cData = {
         companies: []

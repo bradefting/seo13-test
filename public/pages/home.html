@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row sm-top-bottom-margin">
 
-        <h2 class="text-center">Products</h2>
+        <h2 class="text-center">Pax8 Classifieds</h2>
 
         <section class="row" ng-repeat="item in cData.products">
             <div class="col-md-12">
@@ -20,7 +20,7 @@
                     <br>
                     {{ item.description }}
                   </p>
-                  <!-- <button type="submit" class="btn btn-default" ui-sref="edit({id: item.id})" name="edit">edit</button> -->
+                  <button type="submit" class="btn btn-default" ui-sref="edit({id: item.id})" name="edit">See More</button>
 
                   <button type="button" class="btn btn-success" name="buy" disabled>BUY IT NOW!</button>
 

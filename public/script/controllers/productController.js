@@ -1,9 +1,20 @@
 angular.module("myApp")
-	.controller("productController", ['$scope', '$location', 'MyProducts', '$routeParams', function($scope, $location, MyProducts, $routeParams) {
+	.controller("productController", ['$scope', '$location', '$routeParams', function($scope, $location, $routeParams) {
 
       $scope.cData = {
-        companies: []
+        product: []
       }
+
+			$scope.getProduct = function getProduct() {
+				$http.get(`/pax8seo/${id}`)
+						.success(function(result){
+							console.log(result);
+							return result;
+						})
+						.error(function(data, status){
+							console.log(data);
+						})
+			};
 
 			$scope.init = function init() {
 				// $scope.getProducts();

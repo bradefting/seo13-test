@@ -1,5 +1,5 @@
 angular.module("myApp")
-	.controller("myCtrl", ['$scope', '$location', 'MyProducts', '$http', function($scope, $location, MyProducts, $http) {
+	.controller("myCtrl", ['$scope', '$location', '$http', function($scope, $location, $http) {
 
 			// temporary storage for data
 			$scope.cData = {
@@ -15,7 +15,7 @@ angular.module("myApp")
 				console.log($location.path('/showProduct'));
 			};
 
-			// fn called on load, shows "loading products" until products loaded. Sets all products in cData
+			// Sets all products in cData
 			$scope.getProducts = function getProducts() {
 				$http.get('/pax8seo')
 						.success(function(result){
@@ -36,13 +36,3 @@ angular.module("myApp")
 			$scope.init();
 
 	}]);
-
-	// $scope.getProducts = function getProducts() {
-	// 	MyProducts.getAllProducts().then(function(products) {
-	//
-	// 		// products/response is array of all products
-	// 		$scope.cData.products = products;
-	// 		console.log($scope.cData.products);
-	//
-	// 	 }, function(errorMessage) {});
-	// };
