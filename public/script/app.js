@@ -1,6 +1,9 @@
 var myApp = angular.module("myApp", ['ui.bootstrap', 'ngRoute']);
 
-myApp.config(function($routeProvider){
+myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+
+    // add this after d. injection above
+    $locationProvider.html5Mode(true).hashPrefix('!');
 
     $routeProvider
 
@@ -18,4 +21,4 @@ myApp.config(function($routeProvider){
         templateUrl: 'pages/product.html',
         controller: 'productController'
       })
-});
+}]);
