@@ -1,9 +1,10 @@
 var myApp = angular.module("myApp", ['ui.bootstrap', 'ngRoute']);
 
-myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
+myApp.config(function($locationProvider, $routeProvider){
 
     // add this after d. injection above
     $locationProvider.html5Mode(true).hashPrefix('!');
+
 
     $routeProvider
 
@@ -17,8 +18,8 @@ myApp.config(['$routeProvider', '$locationProvider', function($routeProvider, $l
         controller: 'aboutController'
       })
 
-      .when('/buyProduct:id', {
+      .when('#!/buyProduct:id', {
         templateUrl: 'pages/product.html',
         controller: 'productController'
       })
-}]);
+});
