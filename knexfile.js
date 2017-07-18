@@ -5,11 +5,11 @@ module.exports = {
 
   development: {
     client: 'pg',
-    connection: 'postgres://localhost/pax8-seo_dev'
+    connection: 'postgres://localhost/pax8-seo'
   },
   test: {
     client: 'pg',
-    connection: 'postgres://localhost/pax8-seo_test'
+    connection: 'postgres://localhost/pax8-seo'
   },
   production: {
     client: 'pg',
