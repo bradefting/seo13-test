@@ -3,7 +3,7 @@ var myApp = angular.module("myApp", ['ui.bootstrap', 'ngRoute']);
 myApp.config(function($locationProvider, $routeProvider){
 
     // add this after d. injection above
-    $locationProvider.html5Mode(true).hashPrefix('!');
+    $locationProvider.html5Mode(true);
 
 
     $routeProvider
