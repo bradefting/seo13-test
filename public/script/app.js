@@ -17,6 +17,10 @@ myApp.config(function($locationProvider, $routeProvider){
         templateUrl: 'pages/about.html',
         controller: 'aboutController'
       })
+      .when('/support', {
+        templateUrl: 'pages/support.html',
+        controller: 'supportController'
+      })
 
       .when('#!/buyProduct:id', {
         templateUrl: 'pages/product.html',

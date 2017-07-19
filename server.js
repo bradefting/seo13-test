@@ -7,6 +7,11 @@ const bodyParser = require('body-parser');
 const pax8seo = require('./routes/pax8seo');
 const port = process.env.PORT || 3000;
 
+require('dotenv').config();
+
+// prerender code
+app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_KEY));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
