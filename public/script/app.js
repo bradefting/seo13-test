@@ -4,7 +4,8 @@ myApp.config(function($locationProvider, $routeProvider){
 
     // add this after d. injection above
     // $locationProvider.html5Mode(true);
-    $locationProvider.hashPrefix('!');
+    // $locationProvider.hashPrefix('!');
+    $locationProvider.html5Mode(false).hashPrefix('!');
 
     $routeProvider
 
