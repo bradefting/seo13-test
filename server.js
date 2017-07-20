@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 require('dotenv').config();
 
 // prerender code
-app.use(require('prerender-node').set('prerenderToken', 'kOzKMPwviksbDZmoVzuE'));
+// app.use(require('prerender-node').set('prerenderToken', 'kOzKMPwviksbDZmoVzuE'));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
