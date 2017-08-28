@@ -6,7 +6,7 @@ myApp.config(function($locationProvider, $routeProvider){
 
     // add this after d. injection above
     // for html5Mode
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
     // $locationProvider.hashPrefix('!');
     // for hashbang mode
     // $locationProvider.html5Mode(false).hashPrefix('!');
