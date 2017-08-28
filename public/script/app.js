@@ -11,12 +11,12 @@ myApp.config(function($locationProvider, $routeProvider){
     // for hashbang mode
     // $locationProvider.html5Mode(false).hashPrefix('!');
 
-    $rootScope.$on('$stateChangeSuccess', function (event, toState) {
-        window.dataLayer.push({
-            event: 'pageView',
-            action: $location.path(),
-        });
-    });
+    // $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+    //     window.dataLayer.push({
+    //         event: 'pageView',
+    //         action: $location.path(),
+    //     });
+    // });
 
     $routeProvider
 
