@@ -2,7 +2,7 @@ var myApp = angular.module("myApp", ['ui.bootstrap', 'ngRoute']);
 
 // var myApp = angular.module("myApp", ['ui.bootstrap', 'ngRoute', 'angulartics', 'angulartics.google.tagmanager']);
 
-myApp.config(function($locationProvider, $routeProvider, $rootScope){
+myApp.config(function($locationProvider, $routeProvider, $scope, $rootScope){
 
     // add this after d. injection above
     // for html5Mode
