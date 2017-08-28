@@ -6,36 +6,36 @@ myApp.config(function($locationProvider, $routeProvider){
 
     // add this after d. injection above
     // for html5Mode
-    // $locationProvider.html5Mode(true);
+    $locationProvider.html5Mode(true);
     // $locationProvider.hashPrefix('!');
     // for hashbang mode
     // $locationProvider.html5Mode(false).hashPrefix('!');
 
-    // $rootScope.$on('$stateChangeSuccess', function (event, toState) {
-    //     window.dataLayer.push({
-    //         event: 'pageView',
-    //         action: $location.path(),
-    //     });
-    // });
+    $rootScope.$on('$stateChangeSuccess', function (event, toState) {
+        window.dataLayer.push({
+            event: 'pageView',
+            action: $location.path(),
+        });
+    });
 
     $routeProvider
 
-      .when('#/', {
+      .when('/', {
         templateUrl: 'pages/home.html',
         controller: 'myCtrl'
       })
 
-      .when('#/about', {
+      .when('/about', {
         templateUrl: 'pages/about.html',
         controller: 'aboutController'
       })
-      .when('#/support', {
+      .when('/support', {
         templateUrl: 'pages/support.html',
         controller: 'supportController'
       })
 
-      // .when('#!/buyProduct:id', {
-      //   templateUrl: 'pages/product.html',
-      //   controller: 'productController'
-      // })
+      .when('#!/buyProduct:id', {
+        templateUrl: 'pages/product.html',
+        controller: 'productController'
+      })
 });
