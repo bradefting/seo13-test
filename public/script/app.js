@@ -1,4 +1,6 @@
-var myApp = angular.module("myApp", ['ui.bootstrap', 'ngRoute', 'angulartics', 'angulartics.google.tagmanager']);
+var myApp = angular.module("myApp", ['ui.bootstrap', 'ngRoute']);
+
+// var myApp = angular.module("myApp", ['ui.bootstrap', 'ngRoute', 'angulartics', 'angulartics.google.tagmanager']);
 
 myApp.config(function($locationProvider, $routeProvider, $rootScope,  $location){
 
