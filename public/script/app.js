@@ -20,22 +20,22 @@ myApp.config(function($locationProvider, $routeProvider, $rootScope,  $location)
 
     $routeProvider
 
-      .when('/', {
+      .when('#/', {
         templateUrl: 'pages/home.html',
         controller: 'myCtrl'
       })
 
-      .when('/about', {
+      .when('#/about', {
         templateUrl: 'pages/about.html',
         controller: 'aboutController'
       })
-      .when('/support', {
+      .when('#/support', {
         templateUrl: 'pages/support.html',
         controller: 'supportController'
       })
 
-      .when('#!/buyProduct:id', {
-        templateUrl: 'pages/product.html',
-        controller: 'productController'
-      })
+      // .when('#!/buyProduct:id', {
+      //   templateUrl: 'pages/product.html',
+      //   controller: 'productController'
+      // })
 });
