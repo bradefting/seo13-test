@@ -11,6 +11,7 @@ myApp.config(function($locationProvider, $routeProvider){
     // for hashbang mode
     // $locationProvider.html5Mode(false).hashPrefix('!');
 
+    // Google Tag Manager code
     // $rootScope.$on('$stateChangeSuccess', function (event, toState) {
     //     window.dataLayer.push({
     //         event: 'pageView',
